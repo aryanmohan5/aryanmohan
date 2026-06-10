@@ -37,14 +37,17 @@ export function ScrollProvider({ children }: { children: React.ReactNode }) {
     };
     raf = requestAnimationFrame(loop);
 
-    const onScroll = ({ progress: p }: { progress: number }) => {
+    const onScroll = (instance: { progress: number }) => {
+      const p = instance.progress ?? 0;
       setProgress(p);
       document.documentElement.style.setProperty(
         '--scroll-progress',
         p.toFixed(4)
       );
     };
-    lenis.on('scroll', onScroll);
+    // Lenis types `on('scroll', cb)` to receive the Lenis instance; cast for
+    // a lighter local signature.
+    lenis.on('scroll', onScroll as never);
 
     return () => {
       cancelAnimationFrame(raf);

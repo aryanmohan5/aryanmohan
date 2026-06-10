@@ -6,10 +6,10 @@ import type { ReactNode } from 'react';
 type Props = {
   children: ReactNode;
   delay?: number;
-  y?: number;
-  as?: 'div' | 'li' | 'span' | 'section' | 'article';
   className?: string;
 };
+
+const EASE = [0.22, 1, 0.36, 1] as const;
 
 const variants: Variants = {
   hidden: { opacity: 0, y: 14 },
@@ -19,20 +19,14 @@ const variants: Variants = {
     transition: {
       duration: 0.6,
       delay: i,
-      ease: [0.22, 1, 0.36, 1],
+      ease: EASE as unknown as number[],
     },
   }),
 };
 
-export default function FadeIn({
-  children,
-  delay = 0,
-  className,
-  as = 'div',
-}: Props) {
-  const Tag = motion[as];
+export default function FadeIn({ children, delay = 0, className }: Props) {
   return (
-    <Tag
+    <motion.div
       className={className}
       custom={delay}
       variants={variants}
@@ -41,7 +35,7 @@ export default function FadeIn({
       viewport={{ once: true, margin: '-80px' }}
     >
       {children}
-    </Tag>
+    </motion.div>
   );
 }
 
