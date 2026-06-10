@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Design tokens ===== */
+:root {
+  --bg: #0a0a0b;
+  --surface: #101114;
+  --surface-2: #15171c;
+  --border: #1f2126;
+  --border-strong: #2a2d33;
+  --text: #e6e8ec;
+  --muted: #8a8f98;
+  --accent: #7dd3fc;
+  --accent-glow: #38bdf8;
+  --mint: #5eead4;
+
+  /* Driven by ScrollProvider — 0..1 across page scroll */
+  --scroll-progress: 0;
+}
+
+/* ===== Base ===== */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color-scheme: dark;
+}
+
+body {
+  /* Body must stay transparent so the fixed canvas behind it shows through.
+     The page background color is set on <html>. */
+  background-color: transparent;
+  color: var(--text);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+::selection {
+  background: rgba(125, 211, 252, 0.25);
+  color: var(--text);
+}
+
+/* Subtle grid that lives under everything (above ScrollCanvas) */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+}
+
+/* Glassmorphic card surface */
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.005));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-hover {
+  transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 250ms ease,
+              box-shadow 250ms ease;
+}
+
+.glass-hover:hover {
+  transform: translateY(-3px);
+  border-color: rgba(125, 211, 252, 0.35);
+  box-shadow:
+    0 8px 30px -10px rgba(125, 211, 252, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Lenis required styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 8px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-2, #5b6068);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Section anchor offset for fixed nav */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Terminal blink */
+.terminal-cursor::after {
+  content: '_';
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+  color: var(--accent);
+}
+
+/* Accent gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 60%, var(--mint) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
