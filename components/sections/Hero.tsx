@@ -15,7 +15,7 @@ export default function Hero() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="mb-4 font-mono text-2xs uppercase tracking-[0.3em] text-accent"
       >
-        <span className="mr-2 text-muted">//</span> Applied AI Engineer
+        <span className="mr-2 text-muted">{'//'}</span> Applied AI Engineer
       </motion.p>
 
       <motion.h1

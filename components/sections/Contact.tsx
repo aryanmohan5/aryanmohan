@@ -24,7 +24,7 @@ export default function Contact() {
           />
 
           <p className="mb-3 font-mono text-2xs uppercase tracking-[0.3em] text-accent">
-            <span className="mr-2 text-muted">//</span> Let's build something.
+            <span className="mr-2 text-muted">{'//'}</span> Let&apos;s build something.
           </p>
           <h2 className="text-gradient max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
             Open to roles in Applied AI, LLM, and Data Engineering.

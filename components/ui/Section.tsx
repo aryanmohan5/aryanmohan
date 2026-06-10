@@ -28,7 +28,7 @@ export default function Section({
         <header className="mb-12 md:mb-16">
           {eyebrow && (
             <p className="mb-3 font-mono text-2xs uppercase tracking-[0.25em] text-accent">
-              <span className="mr-2 text-muted">//</span>
+              <span className="mr-2 text-muted">{'//'}</span>
               {eyebrow}
             </p>
           )}
