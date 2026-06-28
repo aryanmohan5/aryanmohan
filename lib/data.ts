@@ -142,6 +142,22 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'recomendation-system',
+    icon: 'fa-cloud',
+    title: 'Online Retail Recommendation System',
+    tech: 'Python | Pandas | Scikit-learn | Collaborative Filtering',
+    date: 'July 2024',
+    github: 'https://github.com/aryanmohan5/Online-Retail-Recommendation-System.git',
+    bullets: [
+      'Engineered a Python and SQL-based multidimensional analysis system to extract, process, and curate 540,000+ user-product transaction records.',
+      'Developed custom data modeling functions to establish trusted data quality layers, validating business logic execution for recommendation engines.',
+    ],
+    metrics: [
+      { label: 'Dataset: 500K transactions', icon: 'fa-tachometer-alt' },
+      { label: 'Accuracy: 85%', icon: 'fa-check-double' },
+    ],
+  },
+  {
     id: 'text-to-image',
     icon: 'fa-robot',
     title: 'Text-to-Image Generator (Generative AI)',
@@ -168,8 +184,9 @@ export const experiences: Experience[] = [
     duration: 'May 2026 – Present',
     location: 'Bengaluru, Karnataka',
     bullets: [
-      'Architected an "LLM-as-a-Judge" grading engine and asynchronous job-queue using Vector Stores, LangGraph, and Chain-of-Thought prompting, permanently eliminating hallucinations while significantly reducing API latency and costs.',
-      'Engineered a GPT-4o Vision-powered extraction script to audit MongoDB Atlas clusters, intercepting a >50% data corruption failure rate across 3,490 records and replacing a flawed legacy pipeline with structured JSON outputs.',
+      'Leading AI architecture and full-stack MERN development, focusing on deterministic LLM evaluation engines, robust AWS deployments (ECS, CodeBuild), and the integration of highly scalable agentic workflows.',
+      'Architected a deterministic "LLM-as-a-Judge" evaluation engine and asynchronous job-queue utilizing Vector Stores and Chain-of-Thought prompting; successfully shifted the AI from a high-latency "solver" to a low-cost "evaluator," enforcing strict JSON schemas to drastically reduce API costs and grading hallucinations.',
+      'Spearheaded end-to-end MERN platform architecture and secure AWS CI/CD pipelines (ECS, S3, CodeBuild), deploying role-based access controls (RBAC) and automated GPT-4o Vision ETL scripts that intercepted a 55% database corruption rate across 6,300+ records, while managing junior developers and executing CTO-level technical handovers.',
     ],
     tags: ['LangGraph', 'Vector Stores', 'GPT-4o Vision', 'MongoDB Atlas', 'CoT Prompting'],
   },
