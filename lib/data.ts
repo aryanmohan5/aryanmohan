@@ -51,7 +51,7 @@ export const heroTerminal = {
 // ===== Profile Summary =====
 export const profileSummary = {
   heading: 'PROFILE SUMMARY',
-  body: 'Data Scientist and AI Engineer specializing in Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and agentic workflows. Proven track record of architecting cost-efficient, production-grade AI systems and deploying deterministic, low-latency machine learning infrastructure.',
+  body: 'Full-Stack AI Engineer in highly scalable MERN architectures and agentic AI workflows. Proven track record of architecting cost-efficient “LLM-as-a-Judge” evaluation engines, securing AWS cloud infrastructures, and driving complex generative AI products from conceptualization to production.',
   coreStrengths:
     'Large Language Models (LLMs) | Retrieval-Augmented Generation (RAG) | Agentic Workflows | Production-Grade AI Systems | Vector Stores & LangGraph | Low-Latency ML Infrastructure',
 };
@@ -184,9 +184,11 @@ export const experiences: Experience[] = [
     duration: 'May 2026 – Present',
     location: 'Bengaluru, Karnataka',
     bullets: [
-      'Leading AI architecture and full-stack MERN development, focusing on deterministic LLM evaluation engines, robust AWS deployments (ECS, CodeBuild), and the integration of highly scalable agentic workflows.',
-      'Architected a deterministic "LLM-as-a-Judge" evaluation engine and asynchronous job-queue utilizing Vector Stores and Chain-of-Thought prompting; successfully shifted the AI from a high-latency "solver" to a low-cost "evaluator," enforcing strict JSON schemas to drastically reduce API costs and grading hallucinations.',
-      'Spearheaded end-to-end MERN platform architecture and secure AWS CI/CD pipelines (ECS, S3, CodeBuild), deploying role-based access controls (RBAC) and automated GPT-4o Vision ETL scripts that intercepted a 55% database corruption rate across 6,300+ records, while managing junior developers and executing CTO-level technical handovers.',
+      'Architected a deterministic "LLM-as-a-Judge" grading engine utilizing Vector Stores and Chain-of-Thought prompting,slashing API costs and permanently eliminating hallucinations.',
+      'Engineered automated ETL pipelines utilizing GPT-4o Vision to audit live MongoDB Atlas clusters, intercepting a 55% catastrophic data corruption rate across 6,368 records and preventing downstream AI grading failures.',
+      'Designed and deployed a bank-grade, server-authorized Razorpay webhook payment architecture, closing critical privilege escalation exploits and securing zero-downtime AWS ECS deployments,',
+      'Managed junior engineering staff, established sprint protocols, and directed data pipeline extraction standards.',
+      'Executed comprehensive end-to-end architecture Knowledge Transfer (KT) sessions for incoming executive leadership.',
     ],
     tags: ['LangGraph', 'Vector Stores', 'GPT-4o Vision', 'MongoDB Atlas', 'CoT Prompting'],
   },
@@ -197,7 +199,7 @@ export const experiences: Experience[] = [
     duration: 'May 2025 – April 2026',
     location: 'Remote',
     bullets: [
-      'Founded a digital agency to build responsive frontend templates (HTML/CSS/JS) and prototype interactive, LangChain-powered GenAI features for dynamic user portfolios.',
+      'Founded a B2B GenAI Consultancy delivering high-performance generative AI prototypes and advanced MERN architectures.',
     ],
     tags: ['LangChain', 'GenAI', 'HTML/CSS/JS', 'Frontend'],
   },
