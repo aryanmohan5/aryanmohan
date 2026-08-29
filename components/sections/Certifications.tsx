@@ -17,7 +17,11 @@ export default function Certifications() {
       title="Verified credentials."
     >
       <motion.div
-        className="grid gap-5 md:grid-cols-2"
+        className={
+          certifications.length > 1
+            ? 'grid gap-5 md:grid-cols-2'
+            : 'grid gap-5'
+        }
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-80px' }}

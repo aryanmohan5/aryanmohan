@@ -1,5 +1,5 @@
-// All textual content below is reproduced VERBATIM from the latest resume PDF.
-// Do not edit text. Add structure only.
+// All textual content below is reproduced VERBATIM from the latest resume PDF
+// (public/Aryan Mohan AI Engineer Resume.pdf). Do not edit text — add structure only.
 
 import type {
   Contact,
@@ -19,6 +19,11 @@ export const contact: Contact = {
   github: 'https://github.com/aryanmohan5',
 };
 
+// Resume lives in /public and is served alongside the site. Respect basePath
+// so the link works both locally (empty base) and on GitHub Pages (/aryanmohan).
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+export const resumeHref = `${BASE}/Aryan%20Mohan%20AI%20Engineer%20Resume.pdf`;
+
 export const nav: NavItem[] = [
   { id: 'hero', label: 'Home' },
   { id: 'about', label: 'About' },
@@ -37,195 +42,205 @@ export const heroTerminal = {
     { type: 'cmd', text: 'whoami' },
     {
       type: 'out',
-      text: 'Data Scientist & AI Engineer | LLMs · RAG · Agentic Workflows | Production-Grade AI Systems',
+      text: 'Full-Stack AI Engineer (Tech Lead) | LLM-as-a-Judge · Multi-Agent Workflows · Production AI',
     },
-    { type: 'cmd', text: 'cat skills.txt' },
+    { type: 'cmd', text: 'cat stack.txt' },
     {
       type: 'out',
-      text: 'LangGraph | LangChain | Vector Stores | PyTorch | Python | AWS | Next.js',
+      text: 'RAG | LangGraph | GPT-4o Vision | Node.js | Next.js | AWS | MongoDB Atlas',
     },
     { type: 'cursor', text: '' },
   ],
 };
 
-// ===== Profile Summary =====
+// ===== Profile Summary (synthesised strictly from resume phrasing) =====
 export const profileSummary = {
   heading: 'PROFILE SUMMARY',
-  body: 'Full-Stack AI Engineer in highly scalable MERN architectures and agentic AI workflows. Proven track record of architecting cost-efficient “LLM-as-a-Judge” evaluation engines, securing AWS cloud infrastructures, and driving complex generative AI products from conceptualization to production.',
+  body: 'Full-Stack AI Engineer functioning as Tech Lead at EdviseMe. Architect of a deterministic "LLM-as-a-Judge" grading engine (OpenAI Vector Store + Chain-of-Thought), server-authorized Razorpay webhook infrastructure, and zero-downtime MongoDB migrations across 1,244 legacy paths. Specialising in RAG, Multi-Agent Workflows, and production-grade AI systems for multi-tenant B2B SaaS.',
   coreStrengths:
-    'Large Language Models (LLMs) | Retrieval-Augmented Generation (RAG) | Agentic Workflows | Production-Grade AI Systems | Vector Stores & LangGraph | Low-Latency ML Infrastructure',
+    'RAG & Vector Stores | LLM-as-a-Judge / Agentic Evaluation | Chain-of-Thought & Multi-Agent Workflows | Full-Stack MERN + Next.js | AWS (ECS, S3, CodePipeline, IAM) | Multi-Tenant B2B SaaS Architecture',
 };
 
 // ===== Tech Stack — VERBATIM from resume =====
 export const skillGroups: SkillGroup[] = [
   {
-    label: 'AI & Data Science',
+    label: 'AI & LLM Engineering',
     skills: [
-      'LangGraph',
-      'LangChain',
-      'LLMs (OpenAI, Groq)',
       'RAG',
-      'Vector Stores',
-      'PyTorch',
-      'Scikit-learn',
+      'Vector Stores (OpenAI file_search)',
+      'Prompt Engineering',
+      'LLM-as-a-Judge / Agentic Evaluation',
+      'Chain-of-Thought Prompting',
+      'Multi-Agent Workflows',
+      'OpenAI API',
+      'GPT-4o Vision',
+      'LangChain',
+      'LangGraph',
+      'Groq',
       'Hugging Face',
+      'PyTorch',
     ],
   },
   {
-    label: 'Backend & Infrastructure',
-    skills: [
-      'LangGraph',
-      'LangChain',
-      'LLMs (Groq, OpenAI)',
-      'RAG',
-      'PyTorch',
-      'TensorFlow',
-      'Scikit-learn',
-      'Hugging Face',
-    ],
-  },
-  {
-    label: 'Database & Cloud',
+    label: 'Backend Engineering',
     skills: [
       'Node.js',
-      'Express',
+      'Express.js',
       'Python',
-      'AWS (ECS, S3, ALB, CodeBuild)',
       'REST APIs',
+      'Server-Sent Events (SSE)',
+      'Webhooks (HMAC / idempotency)',
+      'Auth (OAuth, JWT, OTP, HTTP-only cookies)',
+      'Mongoose ODM',
+      'RBAC',
     ],
   },
   {
-    label: 'Frontend Technologies',
+    label: 'Frontend Engineering',
     skills: [
       'React 19',
-      'Next.js',
+      'Next.js (App Router)',
+      'React Router v7',
       'Vite',
       'Tailwind CSS',
-      'KaTeX/React-Markdown',
+      'Axios Interceptors',
+      'KaTeX',
+      'Core Web Vitals / Lighthouse optimization',
+    ],
+  },
+  {
+    label: 'Data & Databases',
+    skills: [
+      'MongoDB Atlas',
+      'Aggregation Pipelines',
+      'BulkWrite',
+      'Schema Design & Zero-Downtime Migrations',
+      'Vector Databases',
+      'SQL',
+      'ETL Pipelines',
+      'Pandas',
+      'NumPy',
+      'Scikit-learn',
+    ],
+  },
+  {
+    label: 'Cloud, DevOps & Product',
+    skills: [
+      'AWS (ECS, S3, CloudFront, ALB, CodeBuild, CodePipeline, Secrets Manager, IAM)',
+      'GCP (Vertex AI)',
+      'CI/CD',
+      'Git',
+      'Multi-Tenant B2B SaaS',
+      'Google Tag Manager',
+      'Razorpay Payments',
     ],
   },
 ];
 
-// ===== Projects (resume order: most recent first) =====
+// ===== Projects (verbatim from resume "Key Projects & Open Source") =====
 export const projects: Project[] = [
   {
     id: 'incident-parser',
     icon: 'fa-robot',
-    title: 'Intelligent Incident Parser (LLM/Groq + Streamlit)',
+    title: 'Intelligent Incident Parser',
     tech: 'Python | Streamlit | Groq',
-    date: 'Dec 2025',
     github: 'https://github.com/aryanmohan5/incident-parser.git',
     bullets: [
-      'Architected an automated parsing engine utilizing Python and the Groq API, achieving a 1–2 second inference latency for processing unstructured system alerts.',
-      'Engineered strict prompt constraints and hallucination controls to ensure 100% deterministic JSON schema formatting for relational database integration.',
+      'Automated parsing engine enforcing strict JSON-schema constraints to achieve 1–2 second inference latency for unstructured system alerts.',
     ],
     metrics: [
       { label: 'Latency: 1–2s', icon: 'fa-tachometer-alt' },
-      { label: 'Deterministic JSON: 100%', icon: 'fa-check-double' },
+      { label: 'Strict JSON Schema', icon: 'fa-check-double' },
     ],
   },
   {
     id: 'weather-classification',
     icon: 'fa-cloud',
-    title: 'Weather Image Classification (Deep Learning/CV)',
+    title: 'Weather Image Classification',
     tech: 'PyTorch | ResNet-101 | XGBoost',
-    date: 'Nov 2024',
     github: 'https://github.com/aryanmohan5/Weather-Image-Classification.git',
     bullets: [
-      'Achieved 92% accuracy across 11 classes by fine-tuning a PyTorch ResNet-101 deep learning model for computer vision.',
-      'Implemented a Genetic Algorithm for advanced feature selection and integrated XGBoost, significantly optimizing model inference and performance.',
+      'Fine-tuned a PyTorch ResNet-101 model to 92% accuracy across 11 classes, integrating XGBoost and a Genetic Algorithm for optimized feature selection and inference speed.',
     ],
     metrics: [
       { label: 'Accuracy: 92%', icon: 'fa-bullseye' },
       { label: 'Classes: 11', icon: 'fa-layer-group' },
-      { label: 'Model: ResNet-101 + XGBoost', icon: 'fa-project-diagram' },
-    ],
-  },
-  {
-    id: 'recomendation-system',
-    icon: 'fa-cloud',
-    title: 'Online Retail Recommendation System',
-    tech: 'Python | Pandas | Scikit-learn | Collaborative Filtering',
-    date: 'July 2024',
-    github: 'https://github.com/aryanmohan5/Online-Retail-Recommendation-System.git',
-    bullets: [
-      'Engineered a Python and SQL-based multidimensional analysis system to extract, process, and curate 540,000+ user-product transaction records.',
-      'Developed custom data modeling functions to establish trusted data quality layers, validating business logic execution for recommendation engines.',
-    ],
-    metrics: [
-      { label: 'Dataset: 500K transactions', icon: 'fa-tachometer-alt' },
-      { label: 'Accuracy: 85%', icon: 'fa-check-double' },
+      { label: 'ResNet-101 + XGBoost + GA', icon: 'fa-project-diagram' },
     ],
   },
   {
     id: 'text-to-image',
     icon: 'fa-robot',
-    title: 'Text-to-Image Generator (Generative AI)',
+    title: 'Text-to-Image Generator',
     tech: 'Python | Hugging Face | Stable Diffusion',
-    date: 'Jan 2024',
     github: 'https://github.com/aryanmohan5/Text-to-Image-Generation.git',
     bullets: [
-      'Developed a low-latency Generative AI pipeline leveraging Stable Diffusion and Hugging Face to synthesize high-resolution images from natural language prompts.',
-      'Optimized model inference and GPU utilization to improve generation speed while maintaining high image fidelity.',
+      'Generative image pipeline within a 250+ contribution 2026 GitHub portfolio spanning LangGraph agentic workflows and automated AWS CI/CD pipelines.',
     ],
     metrics: [
-      { label: 'Stable Diffusion', icon: 'fa-wand-magic-sparkles' },
-      { label: 'High-Resolution Output', icon: 'fa-image' },
+      { label: '380+ GitHub contributions (2026)', icon: 'fa-code-branch' },
+      { label: 'LangGraph · AWS CI/CD', icon: 'fa-wand-magic-sparkles' },
     ],
   },
 ];
 
-// ===== Experience =====
+// ===== Experience (verbatim from resume) =====
 export const experiences: Experience[] = [
   {
     id: 'edviseme',
-    role: 'Full Stack AI Engineer',
+    role: 'Full-Stack AI Engineer (functioning as Tech Lead)',
     company: 'EdviseMe',
     duration: 'May 2026 – Present',
-    location: 'Bengaluru, Karnataka',
+    location: 'Bengaluru → Remote, India',
     bullets: [
-      'Architected a deterministic "LLM-as-a-Judge" grading engine utilizing Vector Stores and Chain-of-Thought prompting,slashing API costs and permanently eliminating hallucinations.',
-      'Engineered automated ETL pipelines utilizing GPT-4o Vision to audit live MongoDB Atlas clusters, intercepting a 55% catastrophic data corruption rate across 6,368 records and preventing downstream AI grading failures.',
-      'Designed and deployed a bank-grade, server-authorized Razorpay webhook payment architecture, closing critical privilege escalation exploits and securing zero-downtime AWS ECS deployments,',
-      'Managed junior engineering staff, established sprint protocols, and directed data pipeline extraction standards.',
-      'Executed comprehensive end-to-end architecture Knowledge Transfer (KT) sessions for incoming executive leadership.',
+      'Architected a deterministic "LLM-as-a-Judge" grading engine (OpenAI Vector Store file_search + Chain-of-Thought), turning an expensive, hallucination-prone "Solver" into a low-cost "Evaluator" that eliminated math and score errors while cutting API cost and latency.',
+      'Audited 6,368 records with a read-only GPT-4o Vision script, surfacing a ~55% data-integrity failure rate (3,490 null model answers, 3,605 null correct answers) and delivering a report that prevented live AI grading failures.',
+      'Rebuilt payments from insecure client-side fulfillment into a server-authorized Razorpay webhook pipeline with HMAC validation and idempotent compare-and-set logic, closing a privilege-escalation exploit that let users self-grant top-tier access.',
+      'Built full-stack revenue/entitlement infrastructure — Geo-IP INR/USD pricing, tiered subscriptions on a 3-hour rolling window, a token ledger, and a referral + admin dashboard that passed a 21/21 automated security test suite.',
+      'Owned MongoDB data architecture: seeded the CBSE curriculum (48 subjects, 604 chapters, 3,495 subtopics) into Atlas and normalized 572+ corrupted documents across 1,244 legacy paths via zero-downtime BulkWrite.',
+      'Acted as de facto Tech Lead: managed junior engineers, set sprint protocols, secured elevated AWS IAM access, and ran a 2-hour end-to-end architecture Knowledge Transfer (KT) session for incoming leadership; 380+ GitHub commits in 2026.',
     ],
-    tags: ['LangGraph', 'Vector Stores', 'GPT-4o Vision', 'MongoDB Atlas', 'CoT Prompting'],
+    tags: [
+      'LLM-as-a-Judge',
+      'OpenAI Vector Store',
+      'GPT-4o Vision',
+      'Razorpay Webhooks',
+      'MongoDB Atlas',
+      'AWS IAM',
+    ],
   },
   {
     id: 'armax',
-    role: 'Founder & AI Engineer',
+    role: 'Founder & AI Architect (B2B GenAI Consultancy)',
     company: 'ARMAX Solutions',
-    duration: 'May 2025 – April 2026',
+    duration: 'May 2025 – Apr 2026',
     location: 'Remote',
     bullets: [
-      'Founded a B2B GenAI Consultancy delivering high-performance generative AI prototypes and advanced MERN architectures.',
+      'Founded a B2B generative-AI consultancy delivering LLM prototypes and advanced MERN-stack architectures for clients.',
     ],
-    tags: ['LangChain', 'GenAI', 'HTML/CSS/JS', 'Frontend'],
+    tags: ['LLM Prototyping', 'MERN Stack', 'B2B GenAI'],
   },
   {
     id: 'here-technologies',
     role: 'Web Scraping Intern',
     company: 'HERE Technologies (Volkswagen Group)',
-    duration: 'June 2024 – July 2024',
-    location: 'Bengaluru, India (Remote)',
+    duration: 'Jun 2024 – Jul 2024',
+    location: 'Remote',
     bullets: [
-      'Engineered Python web scraping pipelines utilizing Scrapy and Requests to automate the extraction of large-scale geospatial datasets across multiple domains.',
-      'Validated and structured GIS data to enhance spatial accuracy for internal downstream location services.',
+      'Automated large-scale geospatial data extraction with Python (Scrapy, Requests) to improve the spatial accuracy of downstream location services.',
     ],
-    tags: ['Python', 'Scrapy', 'Requests', 'GIS Data'],
+    tags: ['Python', 'Scrapy', 'Requests', 'Geospatial'],
   },
   {
     id: 'plasmid',
     role: 'Data Science Intern',
     company: 'Plasmid Innovation Ltd.',
-    duration: 'May 2024 – June 2024',
-    location: 'Bengaluru, India (Remote)',
+    duration: 'May 2024 – Jun 2024',
+    location: 'Remote',
     bullets: [
-      'Trained machine learning models for industrial data analysis utilizing Pandas, Scikit-learn, and NumPy to identify global purchasing trends.',
-      'Developed data cleaning and feature engineering pipelines to process unstructured data for reliable predictive inputs.',
+      'Built data-cleaning pipelines and trained predictive ML models (Pandas, Scikit-learn, NumPy) to identify global purchasing trends.',
     ],
-    tags: ['Machine Learning', 'Pandas', 'Scikit-learn', 'NumPy'],
+    tags: ['Pandas', 'Scikit-learn', 'NumPy', 'Predictive ML'],
   },
 ];
 
@@ -233,8 +248,7 @@ export const experiences: Experience[] = [
 export const education: Education = {
   institution: 'University of Petroleum and Energy Studies (UPES)',
   location: 'Dehradun, India',
-  degree:
-    'B.Tech in Computer Science and Engineering (Artificial Intelligence & Machine Learning)',
+  degree: 'B.Tech in Computer Science and Engineering (AI & ML)',
   duration: 'Aug 2021 – May 2025',
   specializations: [
     'Machine Learning & Artificial Intelligence',
@@ -255,56 +269,19 @@ export const education: Education = {
   ],
 };
 
-// ===== Certifications (resume condenses these; richer descriptions preserved) =====
+// ===== Certifications (resume lists only AI-102 in the latest version) =====
 export const certifications: Certification[] = [
   {
-    id: 'genai-foundations',
-    title: 'Generative AI Foundations',
-    issuer: 'Microsoft (Instabase)',
-    date: '2023',
-    description:
-      'Completed comprehensive training in Generative AI fundamentals through Instabase, a San Francisco-based AI company specializing in applied AI automation platforms.',
-    bullets: [
-      'Covered transformer architectures and diffusion models',
-      'Hands-on with text-to-image generation systems',
-      'Practical applications of generative AI in industry',
-    ],
-  },
-  {
     id: 'ai-102',
-    title: 'AI-102: Azure AI Solution Design',
-    issuer: 'Microsoft Official Course',
+    title: 'Microsoft Certified: Azure AI Engineer Associate (AI-102)',
+    issuer: 'Microsoft',
     date: '2024',
     description:
-      'Completed via Skill Sage and UPES under Microsoft Solutions Partner Program (Data & AI Azure).',
+      'Industry-recognized Microsoft certification validating end-to-end design and implementation of Azure AI solutions.',
     bullets: [
       'Azure Cognitive Services implementation',
       'Building AI solutions with Azure Machine Learning',
       'Natural language processing with Azure',
-    ],
-  },
-  {
-    id: 'deloitte-forage',
-    title: 'Deloitte Data Analytics Simulation',
-    issuer: 'Forage',
-    date: '2025',
-    bullets: [
-      'Built interactive dashboards using Tableau for data visualization',
-      'Performed advanced data classification in Excel',
-      'Derived actionable business insights from complex datasets',
-    ],
-  },
-  {
-    id: 'sfedu-dbms',
-    title: 'Databases and DBMS',
-    issuer: 'ICTIS, Southern Federal University, Russia',
-    date: '2024',
-    description:
-      'Completed a 72-hour online course under MoU between UPES and SFedU, focusing on database systems and relational DBMS concepts.',
-    bullets: [
-      'Database design and normalization',
-      'SQL query optimization',
-      'Transaction management and concurrency control',
     ],
   },
 ];

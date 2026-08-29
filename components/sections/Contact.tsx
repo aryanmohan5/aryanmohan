@@ -1,12 +1,13 @@
 import Section from '@/components/ui/Section';
 import FadeIn from '@/components/ui/FadeIn';
-import { contact } from '@/lib/data';
+import { contact, resumeHref } from '@/lib/data';
 
 const links = [
   { label: 'Email', value: contact.email, href: `mailto:${contact.email}` },
   { label: 'Phone', value: contact.phone, href: contact.phoneHref },
   { label: 'LinkedIn', value: 'linkedin.com/in/aryanmohan1', href: contact.linkedin },
   { label: 'GitHub', value: 'github.com/aryanmohan5', href: contact.github },
+  { label: 'Resume (PDF)', value: 'Download latest resume', href: resumeHref },
 ];
 
 export default function Contact() {

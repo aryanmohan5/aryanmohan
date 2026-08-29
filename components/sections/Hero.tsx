@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { heroTerminal, contact } from '@/lib/data';
+import { heroTerminal, contact, resumeHref } from '@/lib/data';
 
 export default function Hero() {
   return (
@@ -102,6 +102,14 @@ export default function Hero() {
           className="rounded-md border border-border-strong/60 bg-surface/40 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-text/80 transition hover:border-accent/40 hover:text-accent"
         >
           GitHub
+        </a>
+        <a
+          href={resumeHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-md border border-mint/40 bg-mint/5 px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-mint transition hover:bg-mint/10"
+        >
+          Resume ↗
         </a>
       </motion.div>
 
