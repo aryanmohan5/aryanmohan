@@ -13,6 +13,8 @@ export type Project = {
   tech: string;
   date?: string;
   github: string;
+  demo?: string;
+  featured?: boolean;
   bullets: string[];
   metrics?: { label: string; icon: string }[];
 };

@@ -15,7 +15,7 @@ export default function Hero() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className="mb-4 font-mono text-2xs uppercase tracking-[0.3em] text-accent"
       >
-        <span className="mr-2 text-muted">{'//'}</span> Applied AI Engineer
+        <span className="mr-2 text-muted">{'//'}</span> AI Engineer
       </motion.p>
 
       <motion.h1
@@ -33,7 +33,7 @@ export default function Hero() {
         transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         className="mt-6 max-w-2xl text-lg leading-relaxed text-muted md:text-xl"
       >
-        LLM Orchestration · Generative AI · Python Data Engineering · PyTorch · SQL
+        Generative AI · LLM Agents · RAG · Gemini on Vertex AI · Google Cloud
       </motion.p>
 
       {/* Terminal */}

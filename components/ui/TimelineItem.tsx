@@ -45,7 +45,16 @@ export default function TimelineItem({
                 aria-hidden
                 className="absolute left-0 top-2 h-1 w-1 rounded-full bg-mint"
               />
-              {b}
+              {(() => {
+                const m = b.match(/^([A-Z][^:.]{2,45}): (.*)$/);
+                return m ? (
+                  <>
+                    <strong className="font-semibold text-text">{m[1]}:</strong> {m[2]}
+                  </>
+                ) : (
+                  b
+                );
+              })()}
             </li>
           ))}
         </ul>

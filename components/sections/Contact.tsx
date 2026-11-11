@@ -28,7 +28,7 @@ export default function Contact() {
             <span className="mr-2 text-muted">{'//'}</span> Let&apos;s build something.
           </p>
           <h2 className="text-gradient max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
-            Open to roles in Applied AI, LLM, and Data Engineering.
+            Open to AI Engineer roles in Generative AI, LLM Agents and RAG.
           </h2>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">

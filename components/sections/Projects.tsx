@@ -25,7 +25,7 @@ export default function Projects() {
         variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
       >
         {projects.map((p) => (
-          <motion.div key={p.id} variants={item}>
+          <motion.div key={p.id} variants={item} className={p.featured ? 'md:col-span-2' : undefined}>
             <ProjectCard project={p} />
           </motion.div>
         ))}

@@ -2,7 +2,7 @@
   "name": "aryan-mohan-portfolio",
   "version": "2.0.0",
   "private": true,
-  "description": "Aryan Mohan — Applied AI Engineer portfolio",
+  "description": "Aryan Mohan — AI Engineer portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

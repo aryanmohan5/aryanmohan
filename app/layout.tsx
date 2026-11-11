@@ -18,23 +18,30 @@ const geistMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Aryan Mohan — Applied AI Engineer',
+  title: 'Aryan Mohan — AI Engineer | Generative AI, LLM Agents & RAG',
   description:
-    'Applied AI Engineer specializing in LLM orchestration, scalable data pipelines, and constraint-based prompting.',
+    'AI Engineer building production generative AI applications, LLM agents and RAG architectures on Google Cloud (Gemini on Vertex AI, Vertex AI Vector Search, LangChain, Cloud Run).',
   authors: [{ name: 'Aryan Mohan' }],
   keywords: [
-    'Applied AI Engineer',
-    'LLM',
-    'RAG',
+    'AI Engineer',
     'Generative AI',
-    'PyTorch',
+    'LLM Agents',
+    'RAG',
+    'Gemini',
+    'Vertex AI',
+    'Google Cloud',
+    'LangChain',
+    'LangGraph',
+    'Multi-Agent Workflows',
+    'LLM-as-a-Judge',
+    'Next.js',
     'Python',
-    'Data Engineering',
   ],
   openGraph: {
-    title: 'Aryan Mohan — Applied AI Engineer',
+    title: 'Aryan Mohan — AI Engineer | Generative AI, LLM Agents & RAG',
     description:
-      'LLM orchestration, scalable data pipelines, constraint-based prompting.',
+      'Production generative AI, LLM agents and RAG on Google Cloud: Gemini on Vertex AI, Vector Search, Cloud Run.',
+    url: 'https://aryanmohan5.github.io/aryanmohan/',
     type: 'website',
   },
 };

@@ -28,6 +28,11 @@ export default function ProjectCard({ project }: { project: Project }) {
             <h3 className="text-base font-semibold leading-snug text-text md:text-lg">
               {project.title}
             </h3>
+            {project.featured && (
+              <p className="mt-1 font-mono text-2xs uppercase tracking-wider text-mint">
+                ★ Featured
+              </p>
+            )}
             {project.date && (
               <p className="mt-1 font-mono text-2xs uppercase tracking-wider text-muted">
                 {project.date}
@@ -36,15 +41,28 @@ export default function ProjectCard({ project }: { project: Project }) {
           </div>
         </div>
 
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="shrink-0 rounded-md border border-border-strong/60 bg-surface/60 px-2.5 py-1.5 font-mono text-2xs uppercase tracking-wider text-muted transition hover:border-accent/40 hover:text-accent"
-          aria-label={`View ${project.title} on GitHub`}
-        >
-          GitHub →
-        </a>
+        <div className="flex shrink-0 flex-col items-end gap-2 sm:flex-row">
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md border border-mint/30 bg-mint/5 px-2.5 py-1.5 font-mono text-2xs uppercase tracking-wider text-mint transition hover:border-mint/60"
+              aria-label={`Watch ${project.title} demo`}
+            >
+              Demo ↗
+            </a>
+          )}
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-md border border-border-strong/60 bg-surface/60 px-2.5 py-1.5 font-mono text-2xs uppercase tracking-wider text-muted transition hover:border-accent/40 hover:text-accent"
+            aria-label={`View ${project.title} on GitHub`}
+          >
+            GitHub →
+          </a>
+        </div>
       </div>
 
       <p className="mb-4 inline-block w-max max-w-full self-start rounded border border-border-strong/50 bg-surface/60 px-2 py-1 font-mono text-2xs text-accent">
